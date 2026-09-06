@@ -26,10 +26,13 @@ two answers to the same question.
 | 09 | CAD Rules | [`Design_Standards.md`](Design_Standards.md) — "Naming standard" / "Revision rules"; [`README.md`](../README.md) — source-vs-generated split |
 | 10 | Print Rules | [`Design_Standards.md`](Design_Standards.md) — "Print standard" |
 | 11 | Assembly Rules | not yet written — no assemblies exist yet (single-module project so far) |
-| 12 | Wiring Rules | not yet written — no wiring exists yet |
+| 12 | Wiring Rules | not yet written as a standard; one real constraint exists in [`Hardware_Manifest.md`](Hardware_Manifest.md) (Waveshare bus driver's ~5A/header limit) |
 | 13 | Maintenance Rules | [`Design_Standards.md`](Design_Standards.md) — servo standard's serviceability requirements |
 | 14 | Future Expansion | written below (nothing else owns it) |
-| 15 | Lessons Learned | [`TECHNICAL_DEBT.md`](../TECHNICAL_DEBT.md) is the closest current equivalent; will grow into its own log once physical builds exist to learn from |
+| 15 | Lessons Learned | [`TECHNICAL_DEBT.md`](../TECHNICAL_DEBT.md) for CAD/engineering; [`K9_Software_Migration_Report.md`](K9_Software_Migration_Report.md) §5 for real, quoted software lessons from the previous K9 project |
+| 16 | Systems Architecture | [`Systems_Architecture.md`](Systems_Architecture.md) — the 13 robot systems, the K9 Behaviour Engine layer, hardware-to-system cross-reference |
+| 17 | Software Architecture Research | [`Software_Architecture_Research.md`](Software_Architecture_Research.md) — ROS2/Nav2/SLAM/whole-body-control background, not a commitment |
+| 18 | Previous Software Migration | [`K9_Software_Migration_Report.md`](K9_Software_Migration_Report.md) — full audit of the prior K9 project (voice/personality/AI/control), what migrates vs. redesigns vs. is abandoned |
 
 ---
 
@@ -102,6 +105,26 @@ waste motion, never as *can't* move quickly. This should inform the
 WALKING motion envelope's stride parameters in `cad/skeleton_study/`
 once gait/software work starts — a deliberate default pace, not a
 generic fast gait, with a distinct higher-speed mode for genuine need.
+
+**Character philosophy (2026-09-06, character research): K9 is not a
+dog with a computer, nor a computer pretending to be a dog — he is an
+artificial person whose chosen physical embodiment is canine.** Multiple
+physical Mark units have existed canonically across a consistent
+personality: the body is replaceable, the character is not. He behaves
+professionally, not emotionally — dependable, not cold; rarely
+hesitates or apologizes; reports conclusions rather than opinions.
+**Build professional priorities, not robot emotions**: owner safety →
+mission → knowledge → efficiency → etiquette, with emotion as emergent
+behaviour from that hierarchy, never a simulated feeling-state bolted on
+separately. Humour emerges from literal interpretation and deadpan
+certainty, never forced jokes. Affection is earned through action, never
+sought. Voice cadence (short, precise, considered) matters more than
+voice content. **Governing rule for all AI/behaviour work: Mark 6 should
+never become more human — it should become more K9.** Richer perception,
+better movement, and deeper understanding are means to that end, not a
+drift toward generic conversational-AI behaviour. See
+`docs/K9_Software_Migration_Report.md` for the full character research
+and the previous K9 software project's audit this is built on.
 
 **Final design test**: rendered in plain grey CAD with no textures, would
 someone watching it move immediately think "that moves like a real dog"?

@@ -10,6 +10,8 @@ STEP files by eye.
 | v1 | 2026-09-06 | Mechanical Pelvis Alpha — first structure generated within a validated motion envelope (28.7 cm³ intrusion vs. 54.6/37.2/43.3 cm³ for the three authored candidates) | `52bb147` (branch `rear-drive`) |
 | v2 | 2026-09-06 | Alpha reframed as Proof of Method -- intrusion classified by feature (~100% Structural/Bearing/Servo, 0% Incidental); PR #1 merge gate formalized; 7 core principles locked | `55cd017` (branch `rear-drive`) |
 
+| v3 | 2026-09-06 | Systems Architecture (13 systems + K9 Behaviour Engine) and full K9 software migration audit -- previous project confirmed as an unrelated wheeled platform; Character/personality migrates directly, body-control software does not | `6a1029f` (branch `rear-drive`) |
+
 ## Convention for future exports
 
 A commit in the private repo becomes export-worthy when it's tagged with

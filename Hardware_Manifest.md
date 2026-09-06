@@ -14,6 +14,9 @@ Where the user confirmed something directly in chat, that's cited too.
 
 ## Servos
 
+**Supports**: Locomotion, Balance (leg/spine servos); Character (tail/
+ears — body-language expression per `docs/Systems_Architecture.md` §6).
+
 | item | status | mfr/part | qty | dims (mm) | mass | power | connector | mounting | source |
 |---|---|---|---|---|---|---|---|---|---|
 | STS3215 (30kg tier) | **KNOWN** | STS3215-C018 | 16 | 24.7×35.0×45.2 | 55g each | — | serial bus | U-clamp | measured, `mark6_balance.py` comment: "Jon, 2026-07-26: 19 and 30 are 55g each" |
@@ -28,6 +31,8 @@ Where the user confirmed something directly in chat, that's cited too.
 | Printer | **KNOWN, LOCKED** | FlashForge Adventurer 5M | 200×200×200mm build volume, 0.4mm nozzle | `servo_case_AD5M_CONFIRMED.gcode` embedded slicer profile — actually sliced/confirmed, not a spec-sheet guess |
 
 ## Main Battery
+
+**Supports**: Power Distribution, Balance (CG), Thermal Management.
 
 | item | status | mfr/part | qty | dims | mass | power | connector | source |
 |---|---|---|---|---|---|---|---|---|
@@ -46,11 +51,19 @@ search found, was never closed out.**
 
 ## Second Battery
 
+**Supports**: Power Distribution, Balance (CG).
+
 | item | status | dims | mass | source |
 |---|---|---|---|---|
 | 2S 18650 pack (7.4V mid rail) | ESTIMATED | 72×38×20mm | 100g\* | engineering report §9; `k9quad/cad/output/MARK6_COMPONENTS.md`:24 calls it "ex-Dalek" — a reused pack, not a fresh purchase |
 
 ## Compute
+
+**Supports**: Vision, Speech, Character, Learning, Navigation
+(Jetson — the shared processing node for multiple systems, not "just a
+computer"); Locomotion, Balance (Pico/XIAO — real-time reflex loop);
+Locomotion, Balance, Character (Waveshare bus driver — the physical
+channel every servo command and body-language cue travels through).
 
 | item | status | mfr/part | dims | power/thermal | source |
 |---|---|---|---|---|---|
@@ -60,6 +73,11 @@ search found, was never closed out.**
 
 ## Sensors
 
+**Supports**: Locomotion, Balance, Navigation (IMU — real, already
+confirms the exact "not just a sensor" point from Review 008: it
+supports three systems at once); Navigation (RPLIDAR C1, if committed);
+Vision, Character (cameras/mics/speakers, once selected).
+
 | item | status | source |
 |---|---|---|
 | IMU + barometric + temp/humidity | **KNOWN** (found this session) | Waveshare Sense HAT (Pi Zero form factor) — `SESSION_PROGRESS_20260723.md` §2: "deletes the BME280 line item AND supplies the IMU" |
@@ -68,11 +86,18 @@ search found, was never closed out.**
 
 ## Power Distribution
 
+**Supports**: Power Distribution System, Safety (current limits/e-stop),
+Thermal Management (regulator heat).
+
 | item | status | notes |
 |---|---|---|
 | Main fuse, master switch, distribution board, current monitoring, voltage regulators, emergency disconnect | **RESERVED — all open**, per Review 008 §4 | 5A buck (Jetson) and 5V buck (logic) appear in `docs/BOM.md`'s payload table as PROVISIONAL/ESTIMATE envelopes only, no board selected |
 
 ## Wiring
+
+**Supports**: Communications, Power Distribution, Safety, Maintenance
+(service loops/connector access are a servicing concern as much as an
+electrical one).
 
 Open per Review 008 §5: connector family, wire gauges, harness routing,
 service loops, strain relief, connector access. **One real constraint
