@@ -33,6 +33,13 @@ two answers to the same question.
 
 ## 01. Vision
 
+> **The success of Mark 6 will not be measured by how many features it
+> has, but by how coherent it is. Every subsystem should reinforce every
+> other subsystem until the robot feels inevitable — as though it could
+> not have been engineered any other way.**
+>
+> — ChatGPT, independent design review, 2026-09-06
+
 **The goal is not to finish quickly. The goal is to build the best
 open-source quadruped robot we can. Every subsystem should be good enough
 that we'd be proud to reuse it in Mark 7.** (Jon, 2026-09-06) — this is the
