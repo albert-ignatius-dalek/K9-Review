@@ -1,39 +1,48 @@
 # Project Axioms
 
-Not standards (`docs/Design_Standards.md` — procedural, expected to
-evolve). Not engineering decisions (`Engineering_Decisions.md` — a log of
-specific choices and why). These are the irreducible truths of Mark 6 —
-they should almost never change, and a change here is not a routine edit:
-it's a re-founding of the project, and should be treated with that
-weight.
+## Purpose
 
-## Axiom 1
-We are building the actual K9 character using modern engineering.
+The irreducible philosophical foundation of the Mark series. Not
+standards (`docs/Design_Standards.md` — how ideas get implemented). Not
+engineering decisions (`Engineering_Decisions.md` — a log of specific
+choices and why). Just the truths everything else is built on.
 
-## Axiom 2
-Movement creates appearance.
+```
+PROJECT_AXIOMS.md   — what truths define Mark 6?
+        │ defines
+        ▼
+Design_Bible.md      — given those axioms, how do we design Mark 6?
+        │ implements
+        ▼
+Design_Standards.md  — exactly how do we implement those ideas?
+        │ constrains
+        ▼
+Subsystem documents
+```
 
-## Axiom 3
-Biomechanics define allowable structure.
+## Seven Axioms
 
-## Axiom 4
-Geometry is generated from validated constraints.
+1. We are building the actual K9 character using modern engineering.
+2. Movement creates appearance.
+3. Biomechanics define allowable structure.
+4. Geometry is generated from validated constraints.
+5. Biology informs behaviour. Engineering implements behaviour.
+6. Protect the architecture.
+7. Every subsystem should simplify the next subsystem.
 
-## Axiom 5
-Biology informs behaviour. Engineering implements behaviour.
+## Change Policy
 
-## Axiom 6
-Protect the architecture.
+These axioms represent the philosophical foundation of the Mark series.
+They should only be modified when overwhelming engineering evidence
+demonstrates that an axiom no longer serves the project's purpose. New
+axioms should be added only if they are fundamental, broadly applicable,
+and cannot be derived from the existing set.
 
-## Axiom 7
-Every subsystem should simplify the next subsystem.
+## Revision History
 
----
-
-Formalized 2026-09-06, at the point the project's engineering philosophy
-stabilized (what the independent design review called "Architectural
-Stability Phase 1" — the philosophy and methodology becoming internally
-consistent, not the robot nearing completion). From this point, most
-progress is expected to come from applying these seven, not inventing an
-eighth — see `docs/Design_Bible.md`'s decision framework for the
-three-question test any candidate addition must pass first.
+- **2026-09-06** — formalized, at the point the project's engineering
+  philosophy stabilized (independent design review's "Architectural
+  Stability Phase 1" — the philosophy and methodology becoming internally
+  consistent, not the robot nearing completion). Moved out of
+  `docs/Design_Bible.md`'s "Core principles" section rather than
+  duplicated there, per this project's own configuration-management rule.
