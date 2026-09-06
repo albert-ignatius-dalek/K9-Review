@@ -6,6 +6,13 @@ direct audit of `/home/jwh/claw3-full-backup/home/albert/K9_PROJECT/`
 and related files — not a summary of intentions, an audit of what
 actually exists in code.
 
+## Three-way split (review 013)
+
+| | Migrate | Redesign | Rebuild |
+|---|---|---|---|
+| **What** | Character, voice philosophy, speech rules, interaction style | Memory, Learning, Behaviour, embodied interaction | Locomotion, Balance, Navigation, whole-body control |
+| **Why** | Real, mature, already converges with independent character research | Not poorly implemented — not implemented at all, so this is a clean first-principles design, not a fix | Different hardware family entirely (wheeled → legged); nothing here applies |
+
 ## Correction to the framing this assignment started from
 
 The premise was "we've built the body, now reconnect it with the mind

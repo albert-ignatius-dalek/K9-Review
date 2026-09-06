@@ -12,6 +12,8 @@ STEP files by eye.
 
 | v3 | 2026-09-06 | Systems Architecture (13 systems + K9 Behaviour Engine) and full K9 software migration audit -- previous project confirmed as an unrelated wheeled platform; Character/personality migrates directly, body-control software does not | `6a1029f` (branch `rear-drive`) |
 
+| v4 | 2026-09-06 | Review 013 refinements: Behaviour Layer (not Engine), Behavioural Modes, three memory types, candidate axiom preserved pending scrutiny | `ee0a4e7` (branch `rear-drive`) |
+
 ## Convention for future exports
 
 A commit in the private repo becomes export-worthy when it's tagged with

@@ -126,6 +126,20 @@ drift toward generic conversational-AI behaviour. See
 `docs/K9_Software_Migration_Report.md` for the full character research
 and the previous K9 software project's audit this is built on.
 
+**Candidate axiom, not yet promoted (2026-09-06) — pending scrutiny over
+time before it earns a place in `PROJECT_AXIOMS.md`:**
+
+> Mark 6 is not a robot that portrays K9; Mark 6 is an engineering
+> attempt to realize K9 as a physically believable artificial being.
+
+The distinction: not imitation, not cosplay — realization. If this
+survives scrutiny, it reframes every engineering decision's actual
+question from "how do we build this robot?" to "if K9 had really
+existed, and we had today's engineering, what would he have been?" Left
+here rather than in `PROJECT_AXIOMS.md` because that file's own change
+policy requires overwhelming evidence over time, not one strong
+articulation, before a statement earns axiom status.
+
 **Final design test**: rendered in plain grey CAD with no textures, would
 someone watching it move immediately think "that moves like a real dog"?
 Static standing-pose appearance is not sufficient — validate in standing,

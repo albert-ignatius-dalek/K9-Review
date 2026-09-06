@@ -1,15 +1,19 @@
 # Systems Architecture
 
-## The K9 Behaviour Engine (KBE) — the layer that makes hardware recognizably K9
+## The Behaviour Layer — what makes hardware recognizably K9
 
-Mark 6 is not "an AI for a robot" — it's K9's operating system, in the
-sense of the layer that sits above ROS2/Linux/whatever runs underneath
-and makes every subsystem express the same personality:
+**Not "the K9 Behaviour Engine"** (renamed 2026-09-06, review 013): a
+single "Engine" implies one executable module, and this is more likely a
+collection of cooperating behaviours — Attention, Conversation,
+Locomotion Style, Body Language, Interaction, Task Arbitration, Idle
+Behaviour, Recovery, Social Behaviour — that may never naturally collapse
+into one component. **The Behaviour Layer** names the architectural
+position without presupposing the implementation:
 
 ```
 Character           (who K9 is — docs/Design_Bible.md, PROJECT_AXIOMS.md)
      │
-Behaviour (KBE)      (how K9 acts it out — this layer)
+Behaviour Layer      (how K9 acts it out — cooperating behaviours, not one engine)
      │
 Decision Making      (owner safety → mission → knowledge → efficiency → etiquette)
      │
@@ -19,24 +23,29 @@ Hardware
 ```
 
 Character sits at the top, hardware at the bottom — deliberately the
-reverse of how most robotics projects evolve. The KBE arbitrates
-movement style, speech timing, attention, priorities, interaction,
-posture, confidence, and curiosity across every system below it.
-Whether it's ultimately built as a behaviour tree, hierarchical state
-machine, or planner is an implementation detail — architecturally it's
-its own subsystem, not something Locomotion or Speech does on their own.
+reverse of how most robotics projects evolve. The Behaviour Layer
+arbitrates movement style, speech timing, attention, priorities,
+interaction, posture, confidence, and curiosity across every system
+below it. Whether any given cooperating behaviour ends up built as a
+behaviour tree, hierarchical state machine, or planner is an
+implementation detail — architecturally it's its own layer, not
+something Locomotion or Speech does on their own.
 
-**Embodied Behaviour** — a fourth research stream, distinct from Voice/
-Personality/Robot-Control (the three the migration report covered): not
-what the AI decides, but *how it uses the body* to express it — approach
-distance, whether it rotates the body or just the head, back-away-before
--turning, how it indicates listening, how it enters a room. This is what
-makes an observer think "that's K9," not "that's a quadruped robot," and
-it's exactly what the KBE arbitrates for the Locomotion/Character
-boundary.
+**Governing rule, elevated from implementation to architecture (review
+013)**: **K9 speaks intentionally, never accidentally.** The
+implementation of this rule may evolve (currently: an explicit arm-gate
+before any heard query reaches the brain, per
+`K9_Software_Migration_Report.md` §2/§4); the rule itself should not.
 
-**Reusable behaviour states** (KBE-level, coordinate multiple systems
-each — status: none implemented, this is the target vocabulary):
+**Behavioural Ethology Study** — the fourth research stream (renamed from
+"Embodied Behaviour," review 013): study K9 the way an ethologist studies
+an animal — catalogue Approach, Observe, Wait, Guard, Escort, Search,
+Think, Follow, Recharge, Idle as behavioural specifications, not software
+requirements. Not started. Result should populate
+`docs/K9_Behaviour_Reference.md` (scaffolded, see below).
+
+**Reusable behaviour states** (Behaviour-Layer-level, coordinate multiple
+systems each — status: none implemented, this is the target vocabulary):
 Investigate, Return Home, Follow, Guard, Observe, Escort, Search, Wait,
 Greet, Patrol, Recharge, Standby, Shutdown, Wake. Supersedes the shorter
 placeholder list in the Character System entry below.
@@ -165,12 +174,36 @@ Learning's factual memory below).
 system prompt exists and is migrating close to verbatim (Master/
 Mistress address, Affirmative/Negative/Insufficient data, "This unit,"
 1-3 sentence default) — see `K9_Software_Migration_Report.md` §2 and the
-Character Philosophy note in `docs/Design_Bible.md`. A concrete
-emotion→tail/head/LED mapping exists as a body-language starting point.
+Character Philosophy note in `docs/Design_Bible.md`. This prompt
+independently converges with a separately-conducted character study
+arriving at essentially the same K9 — two independent engineering paths
+landing on the same character is real evidence the character is being
+captured, not just one side's interpretation of it. Treat the prompt as
+a canonical engineering asset (not immutable, but not to be casually
+rewritten either).
+
+A concrete **behavioural-mode → tail/head/LED mapping** exists as a
+body-language starting point (renamed from "emotion mapping," review
+013 — "Behavioural Modes" keeps the implementation aligned with K9's
+professional personality rather than implying simulated feelings): the
+prior project's 5 states (happy/proud/sorrow/alert/aggression) are a
+first draft; a professionally-framed target set going forward is
+Content/Focused/Concerned/Protective/Investigating/Mission/Idle.
 Decision hierarchy: owner safety → mission → knowledge → efficiency →
 etiquette (professional priorities, not simulated emotion). One
-non-negotiable hard rule inherited as an architectural constraint:
-**voice is never autonomous — speaks only on explicit command.**
+non-negotiable hard rule, elevated to architecture (review 013): **K9
+speaks intentionally, never accidentally** — implementation may evolve
+(currently an explicit arm-gate), the rule should not.
+
+**Three distinct kinds of memory** (review 013's biggest structural
+insight from the migration report) — keep these separate from the
+start, don't let them collapse into one generic store:
+- **Identity Memory** — never changes: K9, rules, character, values.
+- **Long-Term Memory** — persistent: people, places, home, owner,
+  experience. This is Robot Learning (System 7 below).
+- **Working Memory** — temporary: conversation, current task, immediate
+  observations. The prior project had only a crude 4-exchange version of
+  this and nothing else — see Learning System below.
 **Dependencies**: Speech (cadence/delivery), Locomotion (body language
 during Listening/Waiting/Thinking states — see migration report §4).
 **Failure modes**: the prior project's own near-miss — an autonomous
