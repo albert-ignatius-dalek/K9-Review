@@ -27,10 +27,18 @@ datum in `cad/master_reference/`.
 - Current rear-hip approach (PROVISIONAL, ChatGPT handoff): print-in-place
   fixed trunnion + captive sleeve. Ø16mm axle preferred, Ø14mm fallback,
   0.25–0.30mm radial clearance. No bearing, no separate steel axle needed.
-- Hip system architecture (approved): upper axis = sidestep (ab/adduction),
-  lower axis = frontstep (flexion/extension); upper servo mounted above,
-  lower servo below; structural pivots independent of servo output shaft;
-  modular rotate-to-service cassette. Shoulders reuse this same language.
+- Hip system architecture: **PREFERRED, not LOCKED** (downgraded
+  2026-09-06 — do not freeze until the actual mechanism is developed and
+  physically validated). Working intuition: primary structural pivot →
+  bearing support → sidestep axis → frontstep axis, upper servo mounted
+  above/lower below, structural pivots independent of servo output shaft,
+  modular rotate-to-service cassette. Shoulders would reuse this language
+  once it's actually locked. Decide the real orientation from: shortest
+  load path, bearing placement, serviceability, cable routing,
+  printability, CG, and servo-output-bearing side-load — not from
+  guessing a box orientation in a volume reservation (which is exactly
+  what `cad/mechanical_pelvis/pelvis_alpha.py`'s servo envelope currently
+  does, flagged there as a first guess).
 
 ## Fastener standard
 

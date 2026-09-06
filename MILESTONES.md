@@ -8,6 +8,7 @@ STEP files by eye.
 | version | date | headline | private repo commit |
 |---|---|---|---|
 | v1 | 2026-09-06 | Mechanical Pelvis Alpha — first structure generated within a validated motion envelope (28.7 cm³ intrusion vs. 54.6/37.2/43.3 cm³ for the three authored candidates) | `52bb147` (branch `rear-drive`) |
+| v2 | 2026-09-06 | Alpha reframed as Proof of Method -- intrusion classified by feature (~100% Structural/Bearing/Servo, 0% Incidental); PR #1 merge gate formalized; 7 core principles locked | `55cd017` (branch `rear-drive`) |
 
 ## Convention for future exports
 

@@ -190,6 +190,24 @@ design from the skeleton outward, not the other way around. See
 `cad/skeleton_study/` for the articulation study this requires before the
 Mechanical Pelvis Assembly is frozen.
 
+### Core principles (2026-09-06) — do not add an eighth without it earning its place
+
+The project's governing ideas, deliberately kept few:
+
+1. Build the actual K9 character.
+2. Movement creates appearance.
+3. Biomechanics define allowable geometry.
+4. Generate structure from validated constraints.
+5. Start from biology, depart only when engineering genuinely requires it.
+6. Protect the architecture.
+7. Every subsystem should make the next subsystem easier to engineer.
+
+Mark 6's coherence comes from having *fewer* governing ideas as it
+matures, not more — the discipline here is resisting an eighth principle
+unless it truly earns its place, the same way a feature doesn't get added
+just because a conversation raised it. Validate methodology before
+geometry, architecture before optimization, evidence before standards.
+
 ### Decision framework: protecting the architecture (2026-09-06)
 
 Past a certain maturity, the project stops being about "designing the

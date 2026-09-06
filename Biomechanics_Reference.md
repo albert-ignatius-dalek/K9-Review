@@ -56,6 +56,23 @@ PROPOSED target posture — see `TECHNICAL_DEBT.md` TD-008), Walking
 explicitly not real gait data). Everything else on the canonical list is
 not yet started.
 
+## Methodology: pose-driven, not angle-driven (2026-09-06)
+
+Mark 6 is not anatomically identical to a terrier — different joint
+locations, link proportions, and actuator arrangement mean copying real
+canine joint angles verbatim can produce a *less* believable posture, not
+a more accurate one. The terrier biomechanics study is therefore a
+**pose reference**, not an angle reference:
+
+```
+Desired canine posture → Inverse kinematics → Joint angles → Validate against hardware limits
+```
+
+`cad/skeleton_study/poses.py`'s current sitting pose was built the
+simpler way (hand-picked joint angles, not solved by IK from a target
+posture) — a reasonable first pass, but the canonical pose library (see
+below) should move to real IK once it's built out.
+
 ## How this feeds the CAD
 
 Every entry here should be traceable to a concrete artifact:

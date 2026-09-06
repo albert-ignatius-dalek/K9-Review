@@ -1,5 +1,29 @@
 # Engineering Decisions Log
 
+## 2026-09-06 — Mechanical Pelvis Alpha validated a *methodology*, not a part
+
+**Decision**: Alpha is not "version 1" of the production pelvis — it's
+**Proof of Method**. Its job was to prove generated-within-the-bound
+geometry beats author-then-check geometry, which it did: 28.7 cm³ motion-
+envelope intrusion vs. 54.6/37.2/43.3 cm³ for the three authored
+candidates, using identical structural geometry to Candidate A.
+
+**Follow-up analysis, not just the headline number**: the residual 28.7
+cm³ was classified by feature rather than accepted as a single figure —
+10.7 cm³ from the general shell (only right where it connects to the hip
+boss), 21.4 cm³ from the hip boss/bearing/servo mount itself, 0.0 cm³
+from the spine clevis. ~100% Structural/Bearing/Servo, 0% Incidental. The
+success criterion is minimizing *non-essential* intrusion, not intrusion
+itself — by that standard this Alpha has reached its engineering floor
+for the current feature set.
+
+**Next milestone — Methodology Replication**: apply the same 5-step
+volume-first method to the shoulder assembly, ribcage, and neck. If it
+reproduces similar packaging gains on each, the project has validated an
+engineering *process*, not just one part.
+
+
+
 A running record of major decisions and why they were made — curated from
 the private engineering history, not a full transcript.
 
