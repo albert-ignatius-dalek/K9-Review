@@ -1,9 +1,11 @@
 # Mark 6 Design Bible
 
-**Document priority (2026-09-06 review): Master Reference, Design Bible,
-Biomechanics Reference, Interface Definitions
-(`cad/master_reference/interfaces.py`), Manufacturing Standards
-(`Design_Standards.md`) — these five collectively define the robot.**
+**Document priority (2026-09-06 review, [`PROJECT_AXIOMS.md`](../PROJECT_AXIOMS.md)
+added above the original five as the project matured): Project Axioms,
+Master Reference, Design Bible, Biomechanics Reference, Interface
+Definitions (`cad/master_reference/interfaces.py`), Manufacturing
+Standards (`Design_Standards.md`) — these six collectively define the
+robot.**
 
 An index, not a duplicate. Configuration-management rule for this project:
 **every piece of information has exactly one canonical location.** This file
@@ -197,22 +199,15 @@ design from the skeleton outward, not the other way around. See
 `cad/skeleton_study/` for the articulation study this requires before the
 Mechanical Pelvis Assembly is frozen.
 
-### Core principles (2026-09-06) — do not add an eighth without it earning its place
+### Core principles — see PROJECT_AXIOMS.md
 
-The project's governing ideas, deliberately kept few:
-
-1. Build the actual K9 character.
-2. Movement creates appearance.
-3. Biomechanics define allowable geometry.
-4. Generate structure from validated constraints.
-5. Start from biology, depart only when engineering genuinely requires it.
-6. Protect the architecture.
-7. Every subsystem should make the next subsystem easier to engineer.
-
-Mark 6's coherence comes from having *fewer* governing ideas as it
-matures, not more — the discipline here is resisting an eighth principle
-unless it truly earns its place, the same way a feature doesn't get added
-just because a conversation raised it. Validate methodology before
+The project's seven governing ideas now live in
+[`PROJECT_AXIOMS.md`](../PROJECT_AXIOMS.md) at the repo root — elevated
+there 2026-09-06 as irreducible, almost-never-change truths, distinct
+from this file's more operational content. Not restated here to avoid
+two answers to the same question. Mark 6's coherence comes from having
+*fewer* governing ideas as it matures, not more — resisting an eighth
+axiom unless it truly earns its place. Validate methodology before
 geometry, architecture before optimization, evidence before standards.
 
 ### Decision framework: protecting the architecture (2026-09-06)
